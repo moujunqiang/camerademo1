@@ -4,19 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
-
-    <VideoView
-        android:id="@+id/video_view"
+    <RelativeLayout
+        android:background="#000000"
+        android:id="@+id/rl_preview_contain"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/iv_play"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/picture_icon_video_play"
-        android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:background="#000000">
+
+
+
+        <ImageView
+            android:id="@+id/iv_video_play"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/picture_icon_video_play" />
+
+
+
+    </RelativeLayout>
 
 </RelativeLayout>

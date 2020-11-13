@@ -218,7 +218,7 @@ public class CameraController {
     /**
      * 停止录像
      */
-    public void stopRecordingVideo() {
+    public String stopRecordingVideo() {
 
 
         if (mMediaRecorder != null) {
@@ -233,14 +233,16 @@ public class CameraController {
             mMediaRecorder.release();
             mMediaRecorder = null;
         }
-        startPreview();
-        Intent intent = new Intent(mActivity, PictureVideoPlayActivity.class);
-        intent.putExtra("path", mNextVideoAbsolutePath);
-        mActivity.startActivity(intent);
         //是否添加到相册
         Intent intent1 = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         intent1.setData(Uri.fromFile(new File(mNextVideoAbsolutePath)));
         mActivity.sendBroadcast(intent1);//发送一个广播
+        startPreview();
+        return mNextVideoAbsolutePath;
+    /*    Intent intent = new Intent(mActivity, PictureVideoPlayActivity.class);
+        intent.putExtra("path", mNextVideoAbsolutePath);
+        mActivity.startActivity(intent);*/
+
 
     }
 
